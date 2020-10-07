@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Recaptcha demo</title>
+        <script src="main.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <link type="text/css" rel="stylesheet" href="main.css">
+    </head>
+
+    <body>
+        <div class="page">
+            <div class="header">
+                <h1>Google recaptcha module demo</h1>
+            </div>
+            <div class="description">
+                <p>Usage example <a href="https://www.npmjs.com/package/@nestlab/google-recaptcha" target="_blank">@nestlab/google-recaptcha</a> package</p>
+            </div>
+            <div class="content">
+                <div class="response">
+                    <div class="status">Status code: <div id="status"></div></div>
+                    <div class="data">Data:</div>
+                    <div id="data"></div>
+                </div>
+
+                <div class="form">
+                    <div class="g-recaptcha" data-sitekey="6Lce09QZAAAAAK6-v-lgcqIAbketqJp-rc4hsbCb"></div>
+                    <button id="request-btn">Make request</button>
+                </div>
+            </div>
+        </div>
+
+        <script>init()</script>
+    </body>
+</html>
