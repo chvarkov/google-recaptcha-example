@@ -1,13 +1,13 @@
 import { Controller, Post } from '@nestjs/common';
 import { Recaptcha } from '@nestlab/google-recaptcha';
 
-@Controller()
-export class AppController {
+@Controller('dogs')
+export class DogController {
     @Recaptcha()
     @Post('submit')
     submit(): object {
         return {
-            data: 'Successful submitted',
+            message: 'Dog successful submitted',
         };
     }
 }

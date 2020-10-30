@@ -78,6 +78,15 @@ button:hover {
     flex-direction: column;
 }
 
+.endpoint {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: solid 1px var(--static-gray);
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+    margin-right: 10px;
+}
 
 .form {
     align-items: center;

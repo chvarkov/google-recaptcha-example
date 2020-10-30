@@ -1,22 +1,16 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { GoogleRecaptchaModule } from '@nestlab/google-recaptcha';
-import { Config } from './core/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path'
+import { SharedModule } from './shared';
+import { APP_MODULES } from './modules';
 
 @Module({
     imports: [
-        GoogleRecaptchaModule.forRoot({
-            secretKey: Config.recaptchaSecret,
-            response: req => req.headers.recaptcha,
-        }),
+        SharedModule,
         ServeStaticModule.forRoot({
             rootPath: join(__dirname, '..', 'client'),
         }),
-    ],
-    controllers: [
-        AppController,
+        ...APP_MODULES,
     ],
 })
 export class AppModule {}

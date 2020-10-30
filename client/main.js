@@ -28,13 +28,15 @@ function init() {
     const reqButton = document.getElementById('request-btn');
     const statusElem = document.getElementById('status');
     const dataElem = document.getElementById('data');
+    const endpointElem = document.getElementById('endpoint');
 
     reqButton.onclick = async () => {
         const recaptcha = grecaptcha.getResponse();
         grecaptcha.reset();
 
 
-        const res = await http.post('/submit', {}, {
+        const endpointPrefix = endpointElem.value;
+        const res = await http.post(`/${endpointPrefix}/submit`, {}, {
             recaptcha,
         });
 
