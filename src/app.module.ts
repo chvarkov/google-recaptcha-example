@@ -10,6 +10,7 @@ import { ConfigModule, ConfigService } from './config';
         GoogleRecaptchaModule.forRootAsync({
             imports: [ConfigModule],
             useFactory: (config: ConfigService) => ({
+                debug: true,
                 secretKey: config.recaptchaSecret,
                 response: req => req.headers.recaptcha,
             }),
